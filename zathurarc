@@ -1,0 +1,53 @@
+# ==========================================
+# One Half Dark Theme for Zathura
+# ==========================================
+
+# Force document color recalculation on startup
+set recolor "true"                   # Toggle false for light-theme
+set recolor-keephue "true"
+
+# --- Document Colors (One Half Dark Palette) ---
+set recolor-lightcolor    "#282c34"  # Background (ui_dark)
+set recolor-darkcolor     "#dcdfe4"  # Foreground (ui_light)
+
+# --- Interface Colors ---
+# Default UI colors
+set default-bg            "#1e2127"  # Darker shade for contrast
+set default-fg            "#dcdfe4"  # ui_light
+
+# Input bar (command mode)
+set inputbar-bg           "#21252b"  # Slightly darker contrast for input
+set inputbar-fg           "#9da5b4"  # Muted grey text
+
+# Status bar
+set statusbar-bg          "#313640"  # Selection / Highlight color
+set statusbar-fg          "#dcdfe4"  # ui_light
+
+# Command completion dropdown
+set completion-bg         "#21252b"
+set completion-fg         "#9da5b4"
+set completion-highlight-bg "#313640"
+set completion-highlight-fg "#e06c75"  # Accent red for active item
+
+# Notifications
+set notification-bg       "#282c34"
+set notification-fg       "#98c379"  # Green for success
+set notification-error-bg  "#e06c75"  # Red
+set notification-error-fg "#282c34"
+set notification-warning-bg "#e5c07b" # Yellow
+set notification-warning-fg "#282c34"
+
+# Enable scrollbar by pressing <v>
+map v feedkeys ":set guioptions sv<Return>"
+
+# Disable the default 'f' follow-link keybinding
+unmap f
+
+# Disable the default 'r' rotate-screen keybinding
+unmap r
+
+# Navigate with j k in presentation mode
+map [presentation] j navigate next
+map [presentation] l navigate next
+map [presentation] k navigate previous
+map [presentation] h navigate previous
