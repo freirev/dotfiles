@@ -13,6 +13,11 @@ unsetopt BEEP
 unsetopt AUTO_CD
 stty -ixon 2>/dev/null
 
+# Key bindings
+bindkey '^[[3~' delete-char
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 # History configuration (required for predictive text across sessions)
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
