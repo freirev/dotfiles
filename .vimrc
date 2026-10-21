@@ -26,13 +26,14 @@ function! StripTrailingWhitespace()
     call winrestview(l:view)
   endif
 endfunction
-autocmd BufWritePre * call StripTrailingWhitespace()
-
-" Enable US English spellcheck automatically in LaTeX buffers
-autocmd FileType tex setlocal spell spelllang=en_us
-
-" Disable automatic line-wrapping in MATLAB and text files
-autocmd FileType matlab,text setlocal textwidth=0 colorcolumn=79
+augroup DotfilesAutocmds
+  autocmd!
+  autocmd BufWritePre * call StripTrailingWhitespace()
+  " Enable US English spellcheck automatically in LaTeX buffers
+  autocmd FileType tex setlocal spell spelllang=en_us
+  " Disable automatic line-wrapping in MATLAB and text files
+  autocmd FileType matlab,text setlocal textwidth=0 colorcolumn=79
+augroup END
 
 " --- Remappings ---
 let mapleader = " "           " Set Spacebar as the custom shortcut prefix

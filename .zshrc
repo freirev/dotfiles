@@ -13,10 +13,16 @@ unsetopt BEEP
 unsetopt AUTO_CD
 stty -ixon 2>/dev/null
 
-# Key bindings
+# Home, End, and Delete across terminal emulators and SSH
+bindkey '^[[H'  beginning-of-line
+bindkey '^[OH'  beginning-of-line
+bindkey '^[[F'  end-of-line
+bindkey '^[OF'  end-of-line
 bindkey '^[[3~' delete-char
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
+
+# Ctrl + Left / Right for word navigation
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 
 # History configuration (required for predictive text across sessions)
 HISTFILE="$HOME/.zsh_history"
@@ -26,6 +32,13 @@ setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
+
+# Prefix history search
+autoload -U up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
 
 # -----------------
 #  Completion & Wildmenu

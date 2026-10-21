@@ -1,6 +1,6 @@
 # Dotfiles
 
-A lean, dotfiles repository configuring my core shell environment, terminal editor, and document viewers. 
+A lean dotfiles repository configuring my core shell environment, terminal editor, and document viewers. 
 
 Designed to be lightweight, portable across Linux workstations/servers, and strictly devoid of machine-specific secrets.
 
