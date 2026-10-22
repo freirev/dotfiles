@@ -99,10 +99,10 @@ augroup VimCompletesMeTex
       \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
 augroup END
 
-" Automatically close the quickfix window if it is the only window left open
+" Automatically quit Vim if the quickfix window is the only window left
 augroup CloseQuickfix
   autocmd!
-  autocmd WinClosed * nested if winnr('$') == 2 && win_gettype() ==# 'quickfix' | cclose | endif
+  autocmd BufEnter * if winnr('$') == 1 && &buftype ==# 'quickfix' | quit | endif
 augroup END
 
 " Subdued background tint for inactive windows
